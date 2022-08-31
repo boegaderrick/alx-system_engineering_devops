@@ -1,1 +1,1 @@
-shell exeecutables
+shell executables
