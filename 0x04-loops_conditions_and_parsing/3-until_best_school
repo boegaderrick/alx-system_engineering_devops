@@ -1,0 +1,8 @@
+#!/usr/bin/env bash
+# This script prints 'Best School' * 10 using until shell loop
+a=0
+until (( a > 9 ))
+do
+	echo Best School
+	(( a++ ))
+done
