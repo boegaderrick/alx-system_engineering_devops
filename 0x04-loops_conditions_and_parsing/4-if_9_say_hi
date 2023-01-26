@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+# This script prints 'Best School' * 10 and 'Hi' after the 9th iteration
 a=0
 while (( a < 10 ))
 do
