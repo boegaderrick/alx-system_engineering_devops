@@ -1,0 +1,14 @@
+#!/usr/bin/env bash
+# This script displays counts minutes and hours for 13 hours - 1 minute
+h=0
+while (( h < 13 ))
+do
+	echo Hour: $h
+	m=1
+	while (( m < 60 ))
+	do
+		echo $m
+		(( ++m ))
+	done
+	(( h++ ))
+done
