@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script filters and prints a logs in sorted order with number of occurrences
+./102-lets_parse_apache_logs | sort | uniq -c | sort -r
