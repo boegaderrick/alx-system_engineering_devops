@@ -1,0 +1,7 @@
+#!/usr/bin/env bash
+# This script reads the /etc/passwd file and displays username, UID and HomeDir only
+IFS=":"
+while read -r f1 _ f3 _ _ f6 _
+do
+	echo "$f1":"$f3":"$f6"
+done < /etc/passwd
