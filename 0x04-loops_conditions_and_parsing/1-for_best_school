@@ -1,0 +1,5 @@
+#!/usr/bin/env bash
+#This script prints out 'Best School' to stdout ten times
+for _ in $(seq 1 10); do
+	echo Best School
+done
