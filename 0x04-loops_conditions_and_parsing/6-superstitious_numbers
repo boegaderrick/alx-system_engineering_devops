@@ -1,4 +1,4 @@
-#!/usr/bin//env bash
+#!/usr/bin/env bash
 # This script prints number one to twenty and sentences in between
 a=1
 while [ "$a" -le "20" ]
