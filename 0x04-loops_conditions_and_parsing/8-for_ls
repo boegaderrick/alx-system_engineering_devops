@@ -1,4 +1,7 @@
 #!/usr/bin/env bash
 # This script displays contents of a directory with each name cut upto the first hyphen
 # shellcheck disable=SC2012
-ls | cut -f 2- -d -
+for line in $(ls)
+do
+	echo $line | cut -f 2- -d -
+done
