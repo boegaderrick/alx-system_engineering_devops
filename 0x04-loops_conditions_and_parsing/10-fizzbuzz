@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+# This script displays from number 1 - 100
+# Numbers that are multiples of 3 & 5 ara substituted by FizzBuzz
+# Numbers that are multiples of 3 are substituted by Fizz
+# Numbers that are multiples of 5 are substituted by Buzz
+a=1
+while [ "$a" -le "100" ]
+do
+	if (( a%3 == 0 && a%5 == 0 ))
+	then
+		echo FizzBuzz
+	elif (( a%3 == 0 ))
+	then
+		echo Fizz
+	elif (( a%5 == 0 ))
+	then
+		echo Buzz
+	else
+		echo $a
+	fi
+	(( ++a ))
+done
