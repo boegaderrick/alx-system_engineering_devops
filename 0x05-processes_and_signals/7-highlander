@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+# This script prints to stdout with a 2 second pause between each print until 
+# SIGTERM triggers differenct output if detected
+trap "echo I am invincible!!!" SIGTERM
+while true
+do
+	echo To infinity and beyond
+	sleep 2
+done
