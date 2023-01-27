@@ -1,0 +1,12 @@
+#!/usr/bin/env bash
+# This script prints to stdout with a 2 second pause between each print until SIGINT is detected
+until false
+do
+	if [[ $? -eq 130 ]]
+	then
+		break
+	fi
+
+	echo To infinity and beyond
+	sleep 2
+done
