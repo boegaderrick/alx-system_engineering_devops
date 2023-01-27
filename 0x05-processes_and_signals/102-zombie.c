@@ -27,8 +27,7 @@ int main(void)
 	while (i < 5 && pid != 0)
 	{
 		pid = fork();
-		if (pid != 0)
-			printf("Zombie process created, PID: %d\n", pid);
+		printf("Zombie process created, PID: %d\n", pid);
 		i++;
 	}
 	if (pid != 0)
