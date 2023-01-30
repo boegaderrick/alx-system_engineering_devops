@@ -6,22 +6,31 @@ then
 	exit 1
 fi
 
+start()
+{
+	./manage_my_process &
+	echo $! >> /var/run/my_process.pid
+}
+
+stop()
+{
+	kill "$(cat /var/run/my_process.pid)"
+	rm /var/run/my_process.pid
+}
+
+
 case $1 in
 	start)
-		./manage_my_process &
-		echo $! >> /var/run/my_process.pid
+		start
 		echo manage_my_process started
 		;;
 	stop)
-		kill "$(cat /var/run/my_process.pid)"
-		rm /var/run/my_process.pid
+		stop
 		echo manage_my_process stopped
 		;;
 	restart)
-		kill "$(cat /var/run/my_process.pid)"
-		rm /var/run/my_process.pid
-		./manage_my_process &
-		echo $! >> /var/run/my_process.pid
+		stop
+		start
 		echo manage_my_process restarted
 		;;
 	*)
