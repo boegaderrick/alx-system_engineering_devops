@@ -6,4 +6,4 @@
 #  puts from + "," + to + "," + flags + "\n"
 #end
 
-print ARGV[0].scan(/^.+from:([^\]]+)|to:([^\]]+)|flags:([^\]]+)/).flatten.compact.join(",")
+print ARGV[0].scan(/^.+from:([^\]]+)|to:([^\]]+)|flags:([^\]]+)/).flatten.compact.join(",") + "\n"
