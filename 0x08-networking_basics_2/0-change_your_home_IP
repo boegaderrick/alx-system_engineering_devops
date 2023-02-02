@@ -1,0 +1,6 @@
+#!/usr/bin/env bash
+# This script modifies/adds values in /etc/hosts file
+cp /etc/hosts ~/temp
+sudo sed -i "/localhost/ s/.*/127.0.0.2 localhost/" ~/temp
+sudo bash -c "echo 8.8.8.8 facebook.com >> ~/temp"
+sudo cp ~/temp /etc/hosts

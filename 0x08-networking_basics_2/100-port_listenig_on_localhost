@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+# This script listens for connections from other devices
+sudo nc -l localhost 98
