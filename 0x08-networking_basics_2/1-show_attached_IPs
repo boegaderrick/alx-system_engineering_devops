@@ -1,4 +1,4 @@
 #!/usr/bin/env bash
 # This script displays all active ipv4 addresses on current machine
-ip addr show | grep inet[^6] | awk '{print $2}' | cut -d/ -f1
-#ifconfig | grep inet[^6] | awk '{print $2}'
+ip addr show | grep "inet[^6]" | awk '{print $2}' | cut -d/ -f1
+#ifconfig | grep "inet[^6]" | awk '{print $2}'
