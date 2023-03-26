@@ -1,5 +1,5 @@
 #This script modifies ssh_config
-new_line { 'PasswordAuthentication':
+file_line { 'PasswordAuthentication':
   ensure => 'present',
   path   => '/etc/ssh/ssh_config',
   line   => '    PasswordAuthentication no',
