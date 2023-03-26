@@ -5,7 +5,7 @@ file_line { 'PasswordAuthentication':
   line   => '    PasswordAuthentication no',
 }
 
-new_line { 'IdentityFile':
+file_line { 'IdentityFile':
   ensure => 'present',
   path   => '/etc/ssh/ssh_config',
   line   => '    IdentityFile ~/.ssh/school',
