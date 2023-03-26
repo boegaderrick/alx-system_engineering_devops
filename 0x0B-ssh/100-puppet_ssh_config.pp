@@ -3,3 +3,7 @@ file {'/etc/ssh/ssh_config':
 	PasswordAuthentication => no,
 	IdentifyFile => ~/.ssh/school,
 	}
+file {'~/.ssh/config':
+	PasswordAuthentication => no,
+	IdentifyFile => ~/.ssh/school,
+	}
