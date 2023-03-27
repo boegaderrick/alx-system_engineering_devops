@@ -1,10 +1,11 @@
 #This script modifies ssh_config
-file_line { 'PasswordAuthentication':
+
+file_line {'IdentityFile':
 	path => '/etc/ssh/ssh_config',
-	line => 'PasswordAuthentication no',
+	line => IdentityFile '~/.ssh/school',
 	}
 
-file_line { 'IdentifyFile':
+file_line {'PasswordAuthentication':
 	path => '/etc/ssh/ssh_config',
-	line => '~/.ssh/school',
+	line => 'PasswordAuthentication no',
 	}
