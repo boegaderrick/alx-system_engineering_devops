@@ -1,2 +1,4 @@
 #!/usr/bin/env bash
-sudo service apache2 start
+#This script installs and starts apache2 on a server
+apt get-update && apt-get install apache2 -y
+service apache2 start
