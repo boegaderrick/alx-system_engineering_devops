@@ -4,4 +4,4 @@ apt update && apt install nginx -y
 #echo 'Hello World!' > /usr/share/nginx/html/index.html
 echo 'Hello World!' > /var/www/html/index.html
 sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
-service nginx reload
+service nginx start
