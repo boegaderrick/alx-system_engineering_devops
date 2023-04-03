@@ -2,7 +2,7 @@
 #This script installs and configures a load balancer
 apt-get update && apt-get install haproxy
 echo 'ENABLED=1' >> /etc/default/haproxy
-b_end="\nbackend web_servers\n\tbalance roundrobin\n\tserver 124467-web-01 54.237.5.42 cookie web-01\n\tserver 124467-web-02 100.25.144.95 cookie web-02"
+b_end="\nbackend web_servers\n\tbalance roundrobin\n\tserver 124467-web-01 54.237.5.42:80 cookie web-01 check\n\tserver 124467-web-02 100.25.144.95:80 cookie web-02 check"
 f_end="\nfrontend http-in\n\tbind *:80\n\tdefault_backend web_servers"
 echo -e "$b_end\n$f_end" >> /etc/haproxy/haproxy.cfg
 service haproxy restart
