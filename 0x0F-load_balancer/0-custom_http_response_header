@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
+#hehkalhgkdjakljglagjkajkjdakgjklajlgjakgjakljgklajsdgkaj
 echo "add_header X-Served-By $hostname;" > cus_headers.conf
 mv cus_headers.conf /etc/nginx/conf.d/
 
