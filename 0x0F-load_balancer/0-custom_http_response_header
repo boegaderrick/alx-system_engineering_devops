@@ -6,4 +6,4 @@ apt update && apt install nginx -y
 echo "add_header X-Served-By $hostname;" > cus_headers.conf
 mv cus_headers.conf /etc/nginx/conf.d/
 
-service nginx reload
+service nginx restart
