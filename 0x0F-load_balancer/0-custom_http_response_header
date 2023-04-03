@@ -1,0 +1,9 @@
+#!/usr/bin/env bash
+apt update && sudo apt install nginx -y
+echo 'Hello World!' > /var/www/html/index.html
+sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
+
+echo 'add_header X-Served-By $hostname;' > headers.conf
+sudo mv headers.conf /etc/nginx/conf.d/
+
+service nginx reload
