@@ -3,7 +3,7 @@ package {'nginx':
 	ensure => present,
 } ->
 file {'/etc/nginx/conf.d/cus_headers.conf':
-	content => 'add_header X-Served-By $hostname',
+	content => 'add_header X-Served-By $hostname;',
 	owner => 'root',
 	group => 'root',
 	mode => '0644',
