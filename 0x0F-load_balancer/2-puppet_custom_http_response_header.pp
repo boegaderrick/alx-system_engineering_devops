@@ -1,3 +1,5 @@
+# This manifest mods a server conf file to include custom header
+
 package {'nginx':
 	ensure => present,
 } ->
