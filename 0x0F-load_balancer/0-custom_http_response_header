@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
-#hehkalhgkdjakljglagjkajkjdakgjklajlgjakgjakljgklajsdgkaj
+#This script configures a server and adds a response header indicating
+#the name of the responding server
+
+apt update && apt install nginx -y
 echo "add_header X-Served-By $hostname;" > cus_headers.conf
 mv cus_headers.conf /etc/nginx/conf.d/
 
