@@ -5,7 +5,7 @@ exec {'install_nginx':
   path    => '/usr/bin/:/bin/',
 }
 -> exec {'create_file':
-  command => 'echo "add_header X-Served-By $hostname;" >> cus_headers.conf',
+  command => 'echo "add_header X-Served-By \$hostname;" >> cus_headers.conf',
   path    => '/usr/bin/:/bin/',
 }
 -> exec {'move_file':
