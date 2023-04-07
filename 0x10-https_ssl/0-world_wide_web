@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+#This script digs domain names and prints their information
+
+if (( $# > 0 ))
+then
+	handler()
+	{
+		full="$1.$2"
+		ip_addr=$(dig +short $full)
+		rec_type=$(dig +noall +answer $full | awk '{print$4}')
+		echo "The subdomain $1 is a $rec_type record and points to $ip_addr"
+	}
+	if (( $# == 1 ))
+	then
+		subs=("www" "lb-01" "web-01" "web-02")
+		for sub in "${subs[@]}"; do
+			handler $sub $1
+		done
+	else
+		handler $2 $1
+	fi
+fi
