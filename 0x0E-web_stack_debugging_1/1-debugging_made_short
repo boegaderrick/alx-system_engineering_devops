@@ -3,3 +3,4 @@
 sudo sed -i 's/8080/80/g' /etc/nginx/sites-enabled/default
 sudo service nginx restart
 #top | pgrep nginx | xargs kill
+pkill -o nginx
