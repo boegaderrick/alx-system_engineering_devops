@@ -2,3 +2,4 @@
 #This script starts nginx web server as nginx user
 chmod o+r /etc/nginx/nginx.conf
 sudo -u nginx service nginx start
+sed -i '11i \\tlisten 0:8080;' delete
