@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
+#This script starts nginx web server as nginx user
 chmod o+r /etc/nginx/nginx.conf
 sudo -u nginx service nginx start
