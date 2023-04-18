@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 #This script starts nginx web server as nginx user
 chmod o+r /etc/nginx/nginx.conf
-su - nginx
-service nginx start
-exit
-#sudo -u nginx service nginx start
+sudo -u nginx service nginx start
+chmod o-r /etc/nginx/nginx.conf
