@@ -20,6 +20,8 @@ if __name__ == '__main__':
 
     total = len(tasks)
     done = len(complete)
-    print(f'Employee {user.get("name")} is done with tasks({done}/{total})')
+    # print(f'Employee {user.get("name")} is done with tasks({done}/{total})')
+    print('Employee {} is done with tasks({}/{}):'.format(user.get("name"),
+                                                          done, total))
     for i in complete:
         print('\t' + i.get('title'))
