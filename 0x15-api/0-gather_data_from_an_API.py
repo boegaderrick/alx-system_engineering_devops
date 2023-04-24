@@ -24,4 +24,4 @@ if __name__ == '__main__':
     print('Employee {} is done with tasks({}/{}):'.format(user.get("name"),
                                                           done, total))
     for i in complete:
-        print('\t' + i.get('title'))
+        print('\t ' + i.get('title'))
