@@ -4,19 +4,21 @@
     It takes a single command-line argument which is the ID of
     the subject worker.
 """
-from json import loads
-from requests import get
-from sys import argv
+if __name__ == '__main__':
 
-users = get('https://jsonplaceholder.typicode.com/users/')
-user = [i for i in loads(users.text) if str(i.get('id')) == argv[1]][0]
+    from json import loads
+    from requests import get
+    from sys import argv
 
-data = get('https://jsonplaceholder.typicode.com/todos/')
-tasks = [i for i in loads(data.text) if str(i['userId']) == argv[1]]
-complete = [i for i in tasks if i.get('completed')]
+    users = get('https://jsonplaceholder.typicode.com/users/')
+    user = [i for i in loads(users.text) if str(i.get('id')) == argv[1]][0]
 
-total = len(tasks)
-done = len(complete)
-print(f'Employee {user.get("name")} is done with tasks({done}/{total})')
-for i in complete:
-    print('\t' + i.get('title'))
+    data = get('https://jsonplaceholder.typicode.com/todos/')
+    tasks = [i for i in loads(data.text) if str(i['userId']) == argv[1]]
+    complete = [i for i in tasks if i.get('completed')]
+
+    total = len(tasks)
+    done = len(complete)
+    print(f'Employee {user.get("name")} is done with tasks({done}/{total})')
+    for i in complete:
+        print('\t' + i.get('title'))
