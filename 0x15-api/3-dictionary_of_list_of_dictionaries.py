@@ -21,7 +21,8 @@ if __name__ == '__main__':
     final = {}
     for id in user_ids:
         tasks = [i for i in loads(data.text) if i['userId'] == id]
-        user = loads(get(f'https://jsonplaceholder.typicode.com/users/{id}').text)
+        user = loads(get('https://jsonplaceholder.typicode.com/users/{}'.
+                         format(id)).text)
         new = {id: []}
         for i in tasks:
             foo = {}
@@ -30,5 +31,5 @@ if __name__ == '__main__':
             foo['completed'] = i.get('completed')
             new[id].append(foo)
         final.update(new)
-    with open(f'todo_all_employees.json', mode='w', encoding='utf-8') as f:
+    with open('todo_all_employees.json', mode='w', encoding='utf-8') as f:
         dump(final, f)
