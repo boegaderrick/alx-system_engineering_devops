@@ -24,9 +24,9 @@ if __name__ == '__main__':
     for i in tasks:
         userId = i.get('userId')
         name = user.get('username')
-        proj_status = i.get('completed')
-        proj_title = i.get('title')
-        string += f'"{userId}","{name}","{proj_status}","{proj_title}"' + '\n'
-    string = string[:-1]
-    with open(f'{argv[1]}.csv', mode='w', encoding='utf-8') as f:
-        f.write(string + '\n')
+        status = i.get('completed')
+        title = i.get('title')
+        string += '"{}","{}","{}","{}"'.format(userId, name, status, title)
+        string += '\n'
+    with open('{}.csv'.format(argv[1]), mode='w', encoding='utf-8') as f:
+        f.write(string)
