@@ -26,6 +26,6 @@ if __name__ == '__main__':
         foo['completed'] = i.get('completed')
         foo['username'] = user.get('username')
         new[argv[1]].append(foo)
-    with open(f'{argv[1]}.json', mode='w', encoding='utf-8') as f:
+    with open('{}.json'.format(argv[1]), mode='w', encoding='utf-8') as f:
         dump(new, f)
     #    f.write(new)
