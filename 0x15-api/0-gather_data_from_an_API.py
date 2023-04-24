@@ -4,8 +4,8 @@
     It takes a single command-line argument which is the ID of
     the subject worker.
 """
-from requests import get
 from json import loads
+from requests import get
 from sys import argv
 
 users = get('https://jsonplaceholder.typicode.com/users/')
