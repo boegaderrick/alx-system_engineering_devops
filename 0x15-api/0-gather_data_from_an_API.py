@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-    This module request an api for workers and all assignments
+    This script requests an api for workers and all assignments
     and then prints a worker's name and their progress
     It takes a single command-line argument which is the ID of
     the subject worker.
