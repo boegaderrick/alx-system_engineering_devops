@@ -4,6 +4,7 @@
 """
 from requests import get
 from json import loads
+from sys import argv
 
 
 def number_of_subscribers(subreddit=None):
@@ -19,5 +20,9 @@ def number_of_subscribers(subreddit=None):
     if subreddit is None:
         return 0
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    response = loads(get(url).text)
+    response = get(url, allow_redirects=False)
+    if response.status_code != 200:
+        return 0
+
+    response = loads(response.text)
     return (response.get('data').get('subscribers'))
