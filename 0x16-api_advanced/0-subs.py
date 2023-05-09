@@ -30,4 +30,7 @@ def number_of_subscribers(subreddit):
 
     # response = loads(response.text)
     response = response.json()
-    return (response.get('data').get('subscribers'))
+    try:
+        return (response.get('data').get('subscribers'))
+    except Exception:
+        return 0
