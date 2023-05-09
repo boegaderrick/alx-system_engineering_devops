@@ -63,6 +63,15 @@ def count_words(subreddit, word_list, page=None, dictionary={}):
         foo = sorted(dictionary.values())
         order = 1 if foo[0] != foo[-1] else 0
         reverse = True if order == 1 else False
-        for key, value in sorted(dictionary.items(), key=lambda items:
-                                 items[order], reverse=reverse):
+        final = sorted(dictionary.items(), key=lambda items: items[order],
+                       reverse=reverse)
+        if reverse is True:
+            for i in range(len(final)):
+                if i < len(final) - 1 and final[i][1] == final[i + 1][1]:
+                    if final[i][0] > final[i + 1][0]:
+                        temp = final[i]
+                        final[i] = final[i + 1]
+                        final[i + 1] = temp
+
+        for key, value in final:
             print(key + ': ' + str(value))
