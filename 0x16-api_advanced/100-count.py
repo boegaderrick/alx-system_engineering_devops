@@ -75,3 +75,4 @@ def count_words(subreddit, word_list, page=None, dictionary={}):
 
         for key, value in final:
             print(key + ': ' + str(value))
+        exit(0)
