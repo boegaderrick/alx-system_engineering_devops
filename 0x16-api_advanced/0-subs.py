@@ -3,8 +3,7 @@
     This module contains a function that makes an API call
 """
 from requests import get
-from json import loads
-from sys import argv
+# from json import loads
 
 
 def number_of_subscribers(subreddit=None):
@@ -24,5 +23,6 @@ def number_of_subscribers(subreddit=None):
     if response.status_code > 299:
         return 0
 
-    response = loads(response.text)
+    # response = loads(response.text)
+    response = response.json()
     return (response.get('data').get('subscribers'))
