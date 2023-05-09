@@ -6,7 +6,7 @@ from requests import get
 # from json import loads
 
 
-def number_of_subscribers(subreddit=None):
+def number_of_subscribers(subreddit):
     """
         This function sends a request to the reddit api requesting
         information about a subreddit then returns the said subreddit's
@@ -16,8 +16,8 @@ def number_of_subscribers(subreddit=None):
         @Return: Total number of subscribers on success
                : 0 on failure
     """
-    if subreddit is None:
-        return 0
+    # if subreddit is None:
+    #    return 0
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
     headers = {
         'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
