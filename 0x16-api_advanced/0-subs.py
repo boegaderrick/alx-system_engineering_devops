@@ -19,7 +19,12 @@ def number_of_subscribers(subreddit=None):
     if subreddit is None:
         return 0
     url = 'https://www.reddit.com/r/{}/about.json'.format(subreddit)
-    response = get(url, allow_redirects=False)
+    headers = {
+        'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64)\
+        AppleWebKit/537.36 (KHTML, like Gecko)\
+        Chrome/114.0.0.0 Safari/537.36 Edg/114.0.0.0'
+    }
+    response = get(url, headers=headers, allow_redirects=False)
     if response.status_code > 299:
         return 0
 
