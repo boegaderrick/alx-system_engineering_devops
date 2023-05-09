@@ -3,7 +3,6 @@
     This module contains a function that makes an API call
 """
 from requests import get
-# from json import loads
 
 
 def number_of_subscribers(subreddit):
@@ -23,9 +22,8 @@ def number_of_subscribers(subreddit):
         Chrome/114.0.0.0 Safari/537.36 Edg/114.0.0.0'
     }
     response = get(url, headers=headers, allow_redirects=False)
-    if response.status_code == 404:
+    if response.status_code > 299:
         return 0
 
-    # response = loads(response.text)
     response = response.json()
     return (response.get('data').get('subscribers'))
