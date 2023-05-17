@@ -1,0 +1,10 @@
+server {
+        listen 80;
+        listen localhost:80;
+        server_name boegaderrick.tech web-01.boegaderrick.tech;
+
+        location /airbnb-onepage {
+                include proxy_params;
+                proxy_pass http://0.0.0.0:5000/airbnb-onepage;
+        }
+}
