@@ -1,3 +1,4 @@
 #!/usr/bin/env bash
 # This script gracefully reloads gunicorn service
+# sudo pkill -HUP gunicorn
 sudo kill -HUP "$(pgrep -o gunicorn)"
